@@ -48,7 +48,7 @@ pass the header {x-access-token:tokenId}
 
 /user-check -> get request
 sample postman type
-![alt text](https://github.com/shahabazkc/car-clenx-machine-test/blob/main/api%20samples/register%20api.png)
+![alt text](https://github.com/shahabazkc/car-clenx-machine-test/blob/main/api%20samples/user-auth-check%20api.png)
 pass the header {x-access-token:tokenId}
 
 
