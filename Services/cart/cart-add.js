@@ -4,7 +4,7 @@ const { cartAdd } = require('../../Controllers/cart-management/add-to-cart');
 const addToCart = (req, res) => {
     let { userId } = req.jwt;
     let { proId } = req.body;
-    if (userId) {
+    if (userId&&proId) {
         cartAdd(proId, userId).then((response) => {
             res.status(201).json({ response })
         }).catch((err) => {

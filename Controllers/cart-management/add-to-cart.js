@@ -4,7 +4,6 @@ const { mongoose } = require('../../Config/mongo-connection');
 
 //CART ADD TO DATABASE
 const cartAdd = (proId, userId) => {
-    
     const cartInfo = mongoose.model('cart', cartSchema);
     return new Promise(async (resolve, reject) => {
         try {
