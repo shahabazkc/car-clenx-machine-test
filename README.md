@@ -1,8 +1,8 @@
 # car-clenx-machine-test
 
-#npm install and npm start
+# npm install and npm start
 
-#Api routes 
+# Api's
 
 /register -> post request
 
