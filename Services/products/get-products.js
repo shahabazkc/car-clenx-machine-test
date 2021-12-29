@@ -2,8 +2,7 @@ const { fetchProducts } = require('../../Controllers/product-management/product-
 
 //GET PRODUCTS ROUTE HANDLER
 const getProducts = (req, res) => {
-    let { type } = req.body;
-    fetchProducts(type).then((response) => {
+    fetchProducts().then((response) => {
         if (response) {
             res.json(response);
         }

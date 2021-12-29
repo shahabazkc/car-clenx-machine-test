@@ -23,7 +23,7 @@ router.post('/register', registerHandler);
 router.post('/login', loginHandler);
 
 //FETCHING THE PRODUCTS
-router.post('/get-products', getProducts);
+router.get('/get-products', getProducts);
 
 //CREATING THE PRODUCT
 router.post('/create-product',createProduct);
