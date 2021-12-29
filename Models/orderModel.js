@@ -4,9 +4,10 @@ const orderSchema = new mongoose.Schema({
   userId: { type: String },
   products: { type: Array },
   date: { type: Date },
-  orderAddress: { type: Object },
+  orderedAddress: { type: Object },
   orderStatus: { type: String },
   totalAmount: { type: Number },
+  paymentGatewat:{type:String},
   orderDelivered: { type: Boolean }
 });
 

@@ -5,6 +5,8 @@ const { mongoose } = require('../../Config/mongo-connection');
 const createOrder = (userId, address, products, totalAmount) => {
   return new Promise(async (resolve, reject) => {
     try {
+
+      //order object model
       let orderObj = {
         userId: userId,
         orderedAddress: {
@@ -12,6 +14,7 @@ const createOrder = (userId, address, products, totalAmount) => {
           number: address.number,
           state: address.state,
           city: address.city,
+          street:address.street,
           pincode: address.pincode
         },
         paymentGateway: 'COD',
@@ -21,7 +24,7 @@ const createOrder = (userId, address, products, totalAmount) => {
         orderDelivered: false,
         date: new Date()
       };
-      console.log(orderObj);
+
       const Orders = mongoose.model('orders', orderSchema);
       let order = new Orders(orderObj);
 
@@ -30,7 +33,7 @@ const createOrder = (userId, address, products, totalAmount) => {
 
         let response = {
           status: true,
-          orderPlace: true
+          orderPlaced: true
         };
 
         resolve(response);
@@ -41,9 +44,8 @@ const createOrder = (userId, address, products, totalAmount) => {
 
     }
 
-
+    //Handling unexpected errors
     catch (err) {
-      console.log(err)
       reject(err)
     }
   })
