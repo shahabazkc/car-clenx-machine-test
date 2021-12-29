@@ -1,6 +1,8 @@
 const { orderSchema } = require("../../Models/orderModel");
+let mongo = require('mongoose');
+const { mongoose } = require('../../Config/mongo-connection');
 
-const createOrder = (userId, address,products, totalAmount) => {
+const createOrder = (userId, address, products, totalAmount) => {
   return new Promise(async (resolve, reject) => {
     try {
       let orderObj = {
@@ -14,12 +16,12 @@ const createOrder = (userId, address,products, totalAmount) => {
         },
         paymentGateway: 'COD',
         products: products,
-        totalAmount: totalAmount,
+        totalAmount: totalAmount[0].total,
         orderStatus: true,
         orderDelivered: false,
         date: new Date()
       };
-
+      console.log(orderObj);
       const Orders = mongoose.model('orders', orderSchema);
       let order = new Orders(orderObj);
 
@@ -41,6 +43,7 @@ const createOrder = (userId, address,products, totalAmount) => {
 
 
     catch (err) {
+      console.log(err)
       reject(err)
     }
   })

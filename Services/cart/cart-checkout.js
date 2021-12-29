@@ -13,7 +13,6 @@ const cartCheckout = async (req, res) => {
 
     //getting the produccts from the cart
     let products = await getWithProductTotal(userId);
-    console.log(products)
     //Checking the cart has products
     if (products.length > 0) {
       createOrder(userId, userAddress, products, totalAmount).then((response) => {
