@@ -15,6 +15,7 @@
 /create-product -> post request
 
 /add-to-cart -> post request
+https://github.com/shahabazkc/car-clenx-machine-test/blob/main/api%20samples/add%20to%20cart%20api.png
 
 /get-cart -> get request
 
