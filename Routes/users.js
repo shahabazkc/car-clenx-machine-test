@@ -7,6 +7,7 @@ const { registerHandler } = require('../Services/users/registerHandler');
 const { loginHandler } = require('../Services/users/loginHandler');
 const { addToCart } = require('../Services/cart/cart-add')
 const { cartView } = require('../Services/cart/cart-view')
+const createProduct = require('../Services/products/add-product');
 const { getProducts } = require('../Services/products/get-products');
 const { userCheck } = require('../Services/users/loginCheck');
 const { removeProd } = require('../Services/cart/remove-product');
@@ -23,6 +24,10 @@ router.post('/login', loginHandler);
 
 //FETCHING THE PRODUCTS
 router.post('/get-products', getProducts);
+
+//CREATING THE PRODUCT
+router.post('/create-product',createProduct);
+
 
 //ADD TO CART ROUTE
 router.post('/add-to-cart', verifyToken, addToCart);
